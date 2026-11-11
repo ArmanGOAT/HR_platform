@@ -1,0 +1,28 @@
+# --- secrets: never commit ---
+.env
+*.session
+*.session-journal
+
+# --- personal data: never commit ---
+resumes_pdfs/
+/data/
+
+# --- model artifacts (they live in MinIO) ---
+/models/
+/indexes/
+
+# --- python ---
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.egg-info/
+
+# --- node ---
+node_modules/
+dist/
+
+# --- OS / editors ---
+.DS_Store
+.idea/
+.vscode/

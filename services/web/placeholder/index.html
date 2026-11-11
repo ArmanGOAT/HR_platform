@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HR Platform</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 4rem auto; padding: 0 1rem; line-height: 1.6; color: #1f2328; background: #fff; }
+    code { background: #f2f2f2; padding: 0.1rem 0.3rem; border-radius: 4px; }
+    pre { background: #f6f8fa; padding: 1rem; border-radius: 8px; overflow-x: auto; }
+    @media (prefers-color-scheme: dark) { body { color: #e6edf3; background: #0d1117; } code, pre { background: #161b22; } }
+  </style>
+</head>
+<body>
+  <h1>HR Platform</h1>
+  <p>The web app is under construction. This placeholder checks that the services are up.</p>
+  <h2>System health</h2>
+  <pre id="health">Checking <code>/api/health</code>…</pre>
+  <script>
+    fetch("/api/health")
+      .then(r => r.json())
+      .then(d => { document.getElementById("health").textContent = JSON.stringify(d, null, 2); })
+      .catch(e => { document.getElementById("health").textContent = "Gateway is not reachable: " + e; });
+  </script>
+</body>
+</html>
